@@ -18,19 +18,24 @@ def notes(request):
     View for the note page. 
     Creates the notes and the note form.
     """ 
-    form = NewNoteForm()
     notes = Note.objects.all()
+    form = NewNoteForm()
     return render(request, 'notepad/notes.html', {
         'form': form,
         'notes': notes
         })
 
 def createNote(request):
+    """
+    View to create a new note.
+    """
     if request.method == 'POST':
         form = NewNoteForm(request.POST)
         if form.is_valid():
+            # Get the note content
             note = form.cleaned_data["note"]
             title = form.cleaned_data["title"]
+            # Make a note and set the properties
             n = Note()
             n.note_text = note
             n.note_title = title

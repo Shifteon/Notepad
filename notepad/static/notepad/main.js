@@ -1,6 +1,9 @@
+/**
+*   The following is a function to change the header color of all notes to a 
+*   random color from the colors array. 
+*   Also change the border color of the delete button to the same color
+*/
 function changeColors() {
-    // Change the header color of all notes to a random color from the colors array
-    // Also change the border color of the delete button to the same color
     let colors = ['#F25F5C', '#FFE066', '#247BA0', '#70C1B3', '#00A878', '#6DAEDB', '#A09EBB', '#8338EC'];
     let headers = document.querySelectorAll('.card header');
     let deleteBtn = document.querySelectorAll('.note-btn');
@@ -16,6 +19,10 @@ function changeColors() {
 
 }
 
+/**
+*   The following is a function to display the edit note form
+*   when the edit button is cliked. 
+*/
 function edit() {
     // Display the edit note form when the edit button is pressed
     let editBtn = document.querySelectorAll(".edit-btn");
@@ -35,6 +42,10 @@ function edit() {
     }
 }
 
+/**
+*   The following is a function to add an id to every edit
+*   button so they correspond with the correct note.
+*/
 function createid() {
     // Add an incremented unique id to every edit button
     // This is so we know which form to display in edit()
@@ -46,6 +57,10 @@ function createid() {
     }
 }
 
+/**
+*   The following is a function to display the new note form
+*   when the new note button is cliked.
+*/
 function createNote() {
     // Code to open up the note creator
     notebtn = document.querySelector('#new-note');
@@ -68,10 +83,36 @@ function createNote() {
     });
 }
 
+/**
+*   The following is a function to prefill the edit form for each note.
+*   It uses the values from the note being edited.
+*/
+function fillEditForm() {
+    // Get the forms and the notes
+    let forms = document.querySelectorAll('#edit-form form');
+    let notes = document.querySelectorAll('.note');
+    let num = 0;
+    for (form of forms) {
+        // These will make it easier to access specific properties
+        let title = 4; // The form title input
+        let text = 7; // The form text input
+        let noteText = 3; // The note's text content
+        let noteTitle = 1; // The note's title
+        // We need the children
+        let formChildren = form.childNodes;
+        let noteChildren = notes[num].childNodes;
+        // Change the input values
+        formChildren[title].value = noteChildren[noteTitle].childNodes[noteTitle].innerText;
+        formChildren[text].value = noteChildren[noteText].innerText;
+        num++;
+    }
+}
+
 // Basically the main function
 window.addEventListener('load', () => {
     createNote();
     createid();
     edit();
+    fillEditForm();
     changeColors();
 });
