@@ -91,7 +91,7 @@ function fillEditForm() {
     // Get the forms and the notes
     let forms = document.querySelectorAll('#edit-form form');
     let notes = document.querySelectorAll('.note');
-    let num = 0;
+    let num = 0; // The note we are on
     for (form of forms) {
         // These will make it easier to access specific properties
         let title = 4; // The form title input
@@ -108,7 +108,10 @@ function fillEditForm() {
     }
 }
 
-// Basically the main function
+/**
+*   Called when the window is loaded.
+*   Basically our 'main' function.
+*/
 window.addEventListener('load', () => {
     createNote();
     createid();
