@@ -1,32 +1,38 @@
 # Overview
 
-{Provide a description the web app that you wrote. Describe how to start a test server on your computer and what website to open up to see the first page of the app.}
+Notepad is a simple webapp for creating and storing notes. It also contains support for multiple users.
 
-{Describe your purpose for writing this software.}
-
-{Provide a link to your YouTube demonstration.  It should be a 4-5 minute demo of the software running (starting the server and navigating through the web pages) and a walkthrough of the code.}
+I hope to create a fun and easy note taking experience that can be accessed anywhere.
 
 [Software Demo Video](http://youtube.link.goes.here)
 
 # Web Pages
 
-{Describe each of the web pages you created and how the web app transitions between each of them.  Also describe what is dynamically created on each page.}
+This application has two main pages. The notes page and the user page. It also contains pages for
+registering, logging in, and logging out, but these are inconsequential.
+
+The notes page is a collection of all the user's current notes. Each note is pulled from a database which contains the notes title, content, and publish date.
+
+The user page is meant for the user to manage their account. Right now, it simply displays the current user.
 
 # Development Environment
 
-{Describe the tools that you used to develop the software}
-
-{Describe the programming language that you used and any libraries.}
+* Django
+* Visual Studio Code
+* Google Chrome
+* Python
+* JavaScript
+* HTML
+* CSS
+* Django auth forms
 
 # Useful Websites
 
-{Make a list of websites that you found helpful in this project}
-* [Web Site Name](http://url.link.goes.here)
-* [Web Site Name](http://url.link.goes.here)
+* [Django Docs](https://docs.djangoproject.com/en/3.2/)
+* [w3Schools JavaScript](https://www.w3schools.com/js/default.asp)
 
 # Future Work
 
-{Make a list of things that you need to fix, improve, and add in the future.}
-* Item 1
-* Item 2
-* Item 3
+* Add better user support (Functional user page)
+* Expand note features (Images, click to edit (no popup edit form))
+* Collaborative features
