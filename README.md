@@ -1,6 +1,6 @@
 # Overview
 
-Notepad is a simple webapp for creating and storing notes. It also contains support for multiple users.
+Notepad is a simple web app for creating and storing notes. It also contains support for multiple users.
 
 I hope to create a fun and easy note taking experience that can be accessed anywhere.
 
