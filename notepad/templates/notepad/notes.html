@@ -17,14 +17,22 @@
 
   <body>
     <nav>
+      <img class="logo-img" src="{% static 'notepad/notepad-logo.png' %}" alt="logo-img">
       <ul>
-        <li><a href="index.html">Notes</a></li>
-        <li><a href="user.html">User</a></li>
+        <li><a href="{% url 'notes' %}">Notes</a></li>
+        {% if user.is_authenticated %}
+          <li><a href="{% url 'user' %}">User</a></li>
+          <li><a href="{% url 'logout' %}">Logout</a></li>
+        {% else %}
+          <li><a href="{% url 'login' %}">Login</a></li>
+          <li><a href="{% url 'register' %}">Register</a></li>
+        {% endif %}
       </ul>
     </nav>
     <main>
-      {% with num=0 %}
+      <!-- We want to display all of our notes along with creating an edit form for them -->
       {% for note in notes %}
+      {% if note.user == user %}
       <article class="card">
         <header>
           <h1>{{ note.note_title }}</h1>
@@ -32,11 +40,6 @@
 
         <body>
           <p>{{note.note_text}}</p>
-          <form action="{% url 'edit' note.id%}" method="post" class="edit-form">
-            {% csrf_token %}
-            {{ form }}
-            <input id="submit" type="submit" value="Submit">
-          </form>
         </body>
         <footer>
           <p>{{note.pub_date}}</p>
@@ -47,17 +50,28 @@
           <button id="" class="note-btn edit-btn">Edit</button>
         </footer>
       </article>
+      <!-- Form for editing a note -->
+      <section class="note-form" id="edit-form">
+        <form action="{% url 'edit' note.id%}" method="post">
+          {% csrf_token %}
+          {{ form }}
+          <input id="submit" type="submit" value="Submit">
+        </form>
+      </section>
+      {% endif %}
       {% endfor %}
-      {% endwith %}
-      <section class="note-form">
-        <form action="." method="post">
+      <!-- Form for creating a new note -->
+      <section class="note-form" id="new-note-form">
+        <form action="{% url 'createNote' %}" method="post">
           {% csrf_token %}
           {{ form }}
           <input id="submit" type="submit" value="Submit">
           <button id="close">Close</button>
         </form>
       </section>
-      <button id="new-note">+</button>
+      {% if user.is_authenticated %}
+        <button id="new-note">+</button>
+      {% endif %}
     </main>
     <footer>
 

@@ -19,15 +19,18 @@ function changeColors() {
 function edit() {
     // Display the edit note form when the edit button is pressed
     let editBtn = document.querySelectorAll(".edit-btn");
-    let forms = document.querySelectorAll('.edit-form');
-    let p = document.querySelectorAll('.card p');
-    let h1 = document.querySelectorAll('.card h1');
+    let forms = document.querySelectorAll('#edit-form');
     for (btn of editBtn) {
         let note_num = btn.id;
         btn.addEventListener('click', () => {
             forms[note_num].style.display = "block";
-            p[note_num].style.display = "none";
-            h1[note_num].style.display = "none";
+
+            // Close the form when we click off the form
+            window.onclick = (event) => {
+                if (event.target == forms[note_num]) {
+                    forms[note_num].style.display = "none";
+                }
+            }
         });
     }
 }
@@ -43,14 +46,13 @@ function createid() {
     }
 }
 
-// Basically the main function
-window.addEventListener('load', () => {
+function createNote() {
     // Code to open up the note creator
     notebtn = document.querySelector('#new-note');
     notebtn.addEventListener('click', () => {
-        form = document.querySelector('.note-form');
+        form = document.querySelector('#new-note-form');
         form.style.display = "block";
-        
+
         // Lets us close the form
         closebtn = document.querySelector('#close');
         closebtn.addEventListener('click', () => {
@@ -64,6 +66,11 @@ window.addEventListener('load', () => {
             }
         }
     });
+}
+
+// Basically the main function
+window.addEventListener('load', () => {
+    createNote();
     createid();
     edit();
     changeColors();

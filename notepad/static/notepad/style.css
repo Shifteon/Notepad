@@ -13,7 +13,7 @@ body {
 
 nav {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 80px 1fr;
     height: auto;
     background-color: #50514f;
 }
@@ -21,10 +21,10 @@ nav {
 nav ul {
     list-style: none;
     align-self: center;
-    justify-content: center;
-    align-content: center;
+    align-items: center;
+    justify-items: center;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 nav a {
@@ -34,6 +34,11 @@ nav a {
 
 nav a:hover {
     color: #98C1D9;
+}
+
+.logo-img {
+    width: 80px;
+    padding: 10px;
 }
 
 main {
@@ -197,3 +202,20 @@ h1, h2, h3, h4, h5, h6 {
     display: none;
 }
 /* end card styles */
+
+/* User styles */
+#user {
+    margin: 0 auto;
+    width: 700px;
+    text-align: center;
+}
+
+/* Register styles */
+#register, #login, #logout {
+    width: fit-content;
+    margin: 50px auto;
+    border: 2px solid #98C1D9;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 5px 3px 3px lightgray;
+}
