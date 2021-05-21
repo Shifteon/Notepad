@@ -1,8 +1,7 @@
 # Overview
 
 Notepad is a simple web app for creating and storing notes. It also contains support for multiple users.
-
-I hope to create a fun and easy note taking experience that can be accessed anywhere.
+With Notepad, I hope to create a fun and easy note taking experience that can be accessed anywhere.
 
 To run this project on your own machine follow these instructions:
 1. Install Python on your machine
