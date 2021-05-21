@@ -53,4 +53,5 @@ The user page is meant for the user to manage their account. Right now, it simpl
 
 * Add better user support (Functional user page)
 * Expand note features (Images, click to edit (no popup edit form))
+* Allow users to choose their own note colors
 * Collaborative features
