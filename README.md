@@ -1,8 +1,7 @@
 # Overview
 
 Notepad is a simple web app for creating and storing notes. It also contains support for multiple users.
-
-I hope to create a fun and easy note taking experience that can be accessed anywhere.
+With Notepad, I hope to create a fun and easy note taking experience that can be accessed anywhere.
 
 To run this project on your own machine follow these instructions:
 1. Install Python on your machine
@@ -11,7 +10,7 @@ To run this project on your own machine follow these instructions:
 4. Open up your command prompt in the directory you downloaded the files
 5. Run ```python manage.py makemigrations``` (You may need to specify python version ie. "python3" if using Python 3)
 6. Run ```python manage.py migrate```
-7. Run ```python manage.py runserver```
+7. Run ```python manage.py runserver```<br>
 (It should look similar to this)
 ```
 System check identified no issues (0 silenced).
@@ -20,7 +19,7 @@ Django version 3.2.2, using settings 'module2.settings'
 Starting development server at http://127.0.0.1:8000/
 Quit the server with CTRL-BREAK.
 ```
-8. Open the provided link in your web browser
+8. Open the provided link in your web browser and navigate to /notepad/notes
 
 [Software Demo Video](http://youtube.link.goes.here)
 
