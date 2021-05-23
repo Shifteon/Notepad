@@ -73,3 +73,8 @@ def editNote(request, note_id):
             n.save()
 
         return HttpResponseRedirect('/notepad/notes')
+
+def note(request, note_id):
+    n = Note.objects.get(pk=note_id)
+    form = NewNoteForm(initial={'title': n.note_title, 'note': n.note_text})
+    return render(request, 'notepad/note.html', {'form': form})
