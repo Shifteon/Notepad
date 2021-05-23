@@ -21,7 +21,7 @@ Quit the server with CTRL-BREAK.
 ```
 8. Open the provided link in your web browser and navigate to /notepad/notes
 
-[Software Demo Video](http://youtube.link.goes.here)
+[Software Demo Video](https://youtu.be/DxMM_ih2pZE)
 
 # Web Pages
 
