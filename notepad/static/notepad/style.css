@@ -120,9 +120,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #new-note {
-    position: absolute;
-    bottom: 3%;
-    right: 5%;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin-bottom: .5em;
+    margin-right: .5em;
     border-radius: 50%;
     height: 70px;
     width: 70px;
